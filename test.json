@@ -1,0 +1,23 @@
+{
+  "lists": [
+    {
+      "name": "list1",
+      "id": "l1",
+      "closed": false
+    }
+  ],
+  "members": [
+    {
+      "username": "user1",
+      "id": "u1"
+    }
+  ],
+  "cards": [
+    {
+      "name": "c1",
+      "closed": false,
+      "idList": "l1",
+      "idMembers": ["u1"]
+    }
+  ]
+}
