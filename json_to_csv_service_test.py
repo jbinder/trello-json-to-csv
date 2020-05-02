@@ -34,20 +34,20 @@ class JsonToCsvServiceTest(unittest.TestCase):
         cards = service.get_cards("l*", "u*")
         self.assertEqual(len(cards), 1)
 
-    def test_get_property_names_valid_filter_should_return_names(self):
+    def test_get_field_names_valid_filter_should_return_names(self):
         service = self._get_loaded_service()
-        properties = service.get_property_names("name")
-        self.assertEqual(len(properties), 1)
+        fields = service.get_field_names("name")
+        self.assertEqual(len(fields), 1)
 
-    def test_get_property_names_invalid_filter_should_not_return_names(self):
+    def test_get_field_names_invalid_filter_should_not_return_names(self):
         service = self._get_loaded_service()
-        properties = service.get_property_names("doesntexist")
-        self.assertEqual(len(properties), 0)
+        fields = service.get_field_names("doesntexist")
+        self.assertEqual(len(fields), 0)
 
     def test_save_should_write_nonempty_csv(self):
         service = self._get_loaded_service()
         cards = service.get_cards(None, None)
-        keys = service.get_property_names("name")
+        keys = service.get_field_names("name")
         file_name = "test.csv"
         service.write_to_file(file_name, cards, keys)
         self.assertTrue(os.stat(file_name).st_size > 0)

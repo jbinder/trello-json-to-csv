@@ -13,7 +13,7 @@ Features:
 
 ## Usage
 
-    usage: main.py [-h] --i input_file --o output_file [--property_selector regex]
+    usage: main.py [-h] --i input_file --o output_file [--field_selector regex]
                    [--member_filter regex] [--list_filter regex]
 
     Converts a Trello JSON to CSV.
@@ -22,9 +22,9 @@ Features:
       -h, --help            show this help message and exit
       --i input_file        The input file (Trello JSON).
       --o output_file       The output file (CSV).
-      --property_selector regex
-                            A regex to select all properties of the cards which
-                            should be included in the CSV.
+      --field_selector regex
+                            A regex to select all fields of the cards which should
+                            be included in the CSV.
       --member_filter regex
                             A regex to select usernames for which cards should be
                             included. Optional, including cards of all users if
